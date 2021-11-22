@@ -19,7 +19,6 @@ let sources = import ../../nix/sources.nix; in {
     pkgs.go
     pkgs.gopls
     pkgs.zig
-    pkgs.cargo
 
     pkgs.alacritty
     pkgs.git
