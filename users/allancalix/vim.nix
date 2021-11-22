@@ -86,11 +86,6 @@ let sources = import ../../nix/sources.nix; in rec {
       name = "nvim-lspinstall";
       src = sources.nvim-lspinstall;
     };
-
-    nvim-treesitter-textobjects = vimUtils.buildVimPlugin {
-      name = "nvim-treesitter-textobjects";
-      src = sources.nvim-treesitter-textobjects;
-    };
   };
 
   tree-sitter-proto = self.callPackage

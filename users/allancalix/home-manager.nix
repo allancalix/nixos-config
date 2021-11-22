@@ -19,6 +19,11 @@ let sources = import ../../nix/sources.nix; in {
     pkgs.gopls
     pkgs.zig
 
+    pkgs.alacritty
+    pkgs.git
+    pkgs.tmux
+    pkgs.neovim-nightly
+
     pkgs.bat
     pkgs.exa
     pkgs.fd
@@ -43,18 +48,6 @@ let sources = import ../../nix/sources.nix; in {
 
   xdg.configFile."i3/config".text = builtins.readFile ./i3;
 
-  programs.alacritty = {
-    enable = true;
-  };
-
-  programs.git = {
-    enable = true;
-  };
-
-  programs.tmux = {
-    enable = true;
-  };
-
   programs.i3status = {
     enable = true;
 
@@ -70,11 +63,6 @@ let sources = import ../../nix/sources.nix; in {
       "wireless _first_".enable = false;
       "battery all".enable = false;
     };
-  };
-
-  programs.neovim = {
-    enable = true;
-    package = pkgs.neovim-nightly;
   };
 
   services.gpg-agent = {
