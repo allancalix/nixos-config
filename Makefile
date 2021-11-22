@@ -1,7 +1,7 @@
 # Connectivity info for Linux VM
 NIXADDR ?= unset
 NIXPORT ?= 22
-NIXUSER ?= mitchellh
+NIXUSER ?= allancalix
 
 # Settings
 NIXBLOCKDEVICE ?= sda

@@ -1,5 +1,5 @@
 {
-  description = "NixOS systems and tools by mitchellh";
+  description = "NixOS systems and tools by allancalix";
 
   inputs = {
     # Pin our primary nixpkgs repository. This is the main nixpkgs repository
@@ -21,10 +21,6 @@
       url = "github:nix-community/home-manager/release-21.05";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-
-    # Other packages
-    nix-pgquarrel.url = "github:mitchellh/nix-pgquarrel";
-    nix-pgquarrel.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, home-manager-unstable, ... }@inputs: let
@@ -38,13 +34,14 @@
       nixpkgs = nixpkgs-unstable;
       home-manager = home-manager-unstable;
       system = "aarch64-linux";
-      user   = "mitchellh";
+      user   = "allancalix";
     };
 
     nixosConfigurations.vm-intel = mkVM "vm-intel" rec {
       inherit nixpkgs home-manager;
       system = "x86_64-linux";
-      user   = "mitchellh";
+      user   = "allancalix";
+      overlays = [];
     };
   };
 }
