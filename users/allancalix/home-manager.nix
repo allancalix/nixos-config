@@ -15,12 +15,15 @@ let sources = import ../../nix/sources.nix; in {
     pkgs.jq
     pkgs.watch
 
+    # Language SDKs
     pkgs.go
     pkgs.gopls
     pkgs.zig
+    pkgs.cargo
 
     pkgs.alacritty
     pkgs.git
+    pkgs.gh
     pkgs.tmux
     pkgs.neovim-nightly
 
@@ -63,6 +66,10 @@ let sources = import ../../nix/sources.nix; in {
       "wireless _first_".enable = false;
       "battery all".enable = false;
     };
+  };
+
+  programs.gpg = {
+    enable = true;
   };
 
   services.gpg-agent = {

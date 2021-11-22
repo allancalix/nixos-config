@@ -27,7 +27,7 @@
     mkVM = import ./lib/mkvm.nix;
 
     # Overlays is the list of overlays we want to apply from flake inputs.
-    overlays = [ inputs.nix-pgquarrel.overlay ];
+    overlays = [];
   in {
     nixosConfigurations.vm-aarch64 = mkVM "vm-aarch64" rec {
       inherit overlays;
@@ -38,10 +38,9 @@
     };
 
     nixosConfigurations.vm-intel = mkVM "vm-intel" rec {
-      inherit nixpkgs home-manager;
+      inherit nixpkgs home-manager overlays;
       system = "x86_64-linux";
       user   = "allancalix";
-      overlays = [];
     };
   };
 }
