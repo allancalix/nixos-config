@@ -71,6 +71,12 @@ let sources = import ../../nix/sources.nix; in {
     enable = true;
   };
 
+  programs.kitty = {
+    enable = true;
+
+    extraConfig = builtins.readFile ./kitty;
+  };
+
   services.gpg-agent = {
     enable = true;
     pinentryFlavor = "tty";
