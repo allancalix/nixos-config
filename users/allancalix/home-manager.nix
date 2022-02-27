@@ -6,8 +6,6 @@
 
   fonts.fontconfig.enable = true;
 
-  programs.home-manager.enable = true;
-
   home.username = "allancalix";
   home.homeDirectory = "/home/allancalix";
   home.stateVersion = "21.11";
@@ -19,7 +17,7 @@
   };
 
   home.packages = [
-    # pkgs.input-fonts
+    pkgs.input-fonts
 
     pkgs.virtualenv
     pkgs.git-absorb
@@ -35,6 +33,10 @@
     pkgs.exa
     pkgs.bat
   ];
+
+  programs.home-manager = {
+    enable = true;
+  };
 
   programs.fish = {
     enable = true;
@@ -191,7 +193,7 @@
 
     plugins = with pkgs.vimPlugins; [
       # Neovim Plugins
-      # coq_nvim
+      coq_nvim
       nvim-treesitter
       nvim-lspconfig
       lualine-nvim

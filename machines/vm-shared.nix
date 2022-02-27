@@ -59,7 +59,7 @@
       sessionCommands = ''
         ${pkgs.xlibs.xset}/bin/xset r rate 200 40
       '' + (if currentSystem == "aarch64-linux" then ''
-        ${pkgs.xorg.xrandr}/bin/xrandr -s '2880x1800'
+        ${pkgs.xorg.xrandr}/bin/xrandr -s '3024x1964'
       '' else "");
     };
 
@@ -103,7 +103,7 @@
       xrandr -s 6016x3384_60.00
     '')
     (writeShellScriptBin "xrandr-mbp" ''
-      xrandr -s 3024x1964
+      xrandr -s 2880x1800
     '')
   ];
 
