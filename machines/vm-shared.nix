@@ -77,11 +77,7 @@
     fontDir.enable = true;
 
     fonts = [
-      (builtins.path {
-        name = "custom-fonts";
-        path = ../secret/fonts;
-        recursive = true;
-      })
+      pkgs.fira-code
     ];
   };
 
@@ -109,7 +105,7 @@
       xrandr -s 6016x3384_60.00
     '')
     (writeShellScriptBin "xrandr-mbp" ''
-      xrandr -s 2880x1800
+      xrandr -s 3024x1964
     '')
   ];
 
