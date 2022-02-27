@@ -1,8 +1,8 @@
 { config, pkgs, currentSystem, ... }:
 
 {
-  # We require 5.14 for VMware Fusion on M1.
-  boot.kernelPackages = pkgs.linuxPackages_5_14;
+  # We require 5.14+ for VMware Fusion on M1.
+  boot.kernelPackages = pkgs.linuxPackages_5_15;
 
   # use unstable nix so we can access flakes
   nix = {
@@ -77,11 +77,7 @@
     fontDir.enable = true;
 
     fonts = [
-      (builtins.path {
-        name = "custom-fonts";
-        path = ../secret/fonts;
-        recursive = true;
-      })
+      pkgs.fira-code
     ];
   };
 
@@ -124,7 +120,7 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
   services.openssh.passwordAuthentication = true;
-  services.openssh.permitRootLogin = "yes";
+  services.openssh.permitRootLogin = "no";
 
   # Disable the firewall since we're in a VM and we want to make it
   # easy to visit stuff in here. We only use NAT networking anyways.
