@@ -43,11 +43,11 @@
   services.xserver = {
     enable = true;
     layout = "us";
-    dpi = 220;
+    dpi = 254;
 
     desktopManager = {
       xterm.enable = false;
-      wallpaper.mode = "scale";
+      wallpaper.mode = "fill";
     };
 
     displayManager = {
