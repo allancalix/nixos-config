@@ -242,6 +242,17 @@
         line-numbers = true;
       };
     };
+
+    signing = {
+      key = "B2F67574B94C1E89";
+      signByDefault = true;
+    };
+
+    extraConfig = {
+      credential = {
+        "https://github.com".helper = "!gh auth git-credential";
+      };
+    };
   };
 
   programs.tmux = {
